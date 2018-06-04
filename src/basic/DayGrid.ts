@@ -227,6 +227,9 @@ export default class DayGrid extends InteractiveDateComponent {
     let isDayNumberVisible = this.getIsDayNumbersVisible() && isDateValid
     let classes
     let weekCalcFirstDoW
+    let dayHeaderFormat =
+      (this as any).opt('dayHeaderFormat') ||
+      'D'
 
     if (!isDayNumberVisible && !this.cellWeekNumbersVisible) {
       // no numbers in day cell (week number must be along the side)
@@ -268,7 +271,7 @@ export default class DayGrid extends InteractiveDateComponent {
       html += view.buildGotoAnchorHtml(
         date,
         { 'class': 'fc-day-number' },
-        date.format('D') // inner HTML
+        date.format(dayHeaderFormat) // inner HTML
       )
     }
 
