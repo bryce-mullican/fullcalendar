@@ -207,14 +207,14 @@ export default class ListView extends View {
           this.buildGotoAnchorHtml(
             dayDate,
             { 'class': 'fc-list-heading-main' },
-            htmlEscape(dayDate.format(mainFormat)) // inner HTML
+            dayDate.format(mainFormat) // inner HTML
           ) :
           '') +
         (altFormat ?
           this.buildGotoAnchorHtml(
             dayDate,
             { 'class': 'fc-list-heading-alt' },
-            htmlEscape(dayDate.format(altFormat)) // inner HTML
+            dayDate.format(altFormat) // inner HTML
           ) :
           '') +
       '</td>' +
